@@ -2,6 +2,9 @@
  Payfort gateway
  
  # Use
- `composer install`
- `php artisan key:generate`
- `php artisan migrate:refresh --seed`
+ 
+    composer install
+
+    php artisan key:generate
+ 
+    php artisan migrate:refresh --seed
