@@ -69,7 +69,7 @@ class PaymentController extends Controller
 			$payment->save();
 			$payment->paid_at = $payment->updated_at;
 			$payment->save();
-			Mail::to($payment->user->email)->send(new PaymentMail($payment));
+			// Mail::to($payment->user->email)->send(new PaymentMail($payment));
 			return redirect('/?payment_id='.$payment->payment_id);
 		}else{
 			$data['alerts']['alert-danger'][] = $result['message'];
@@ -104,7 +104,7 @@ class PaymentController extends Controller
 					$payment->save();
 					$payment->paid_at = $payment->updated_at;
 					$payment->save();
-					Mail::to($payment->user->email)->send(new PaymentMail($payment));
+					// Mail::to($payment->user->email)->send(new PaymentMail($payment));
 				}
 				return response()->json(['success' => 'This transaction already paid!']);
 			}else{
